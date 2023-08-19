@@ -1,0 +1,19 @@
+.col-card{
+    margin-bottom: 100px;
+}
+
+.blog-card:hover{
+    animation: posthover 0.5s ease-in-out;
+}
+
+@keyframes posthover{
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    50%{
+        transform: scale3d(1.02, 1.02, 1.02);
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}

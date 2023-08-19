@@ -1,0 +1,29 @@
+.register-container {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-form {
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f2f2f2b4;
+    backdrop-filter: blur(5px);
+  }
+  
+  .register-form label {
+    font-weight: bold;
+  }
+  
+  .register-form input,
+  .register-form select {
+    margin-bottom: 15px;
+  }
+  
+  .register-form button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  

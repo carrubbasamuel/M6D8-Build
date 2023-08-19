@@ -1,0 +1,65 @@
+.changeprofile{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    bottom: 0;
+    right: 200px;
+    width: 50px;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.changeprofile:hover{
+    transform: scale(1.02);
+}
+
+.imgdash{
+    object-fit: cover;
+}
+.gearani:hover{
+    animation: gear 2s linear infinite;
+}
+
+@keyframes gear{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(40deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(40deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.btn-success{
+    font-size: 26px;
+    --bs-btn-color: none;
+    --bs-btn-bg: none;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-color: none;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-color: none;
+    --bs-btn-active-bg: none;
+    --bs-btn-active-border-color: none;
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: none;
+    --bs-btn-disabled-bg: none;
+    --bs-btn-disabled-border-color: none;
+}
+
+.btn-success:hover{
+    color: #0000005a;
+    transform: scale(1.05);
+}

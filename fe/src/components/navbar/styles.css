@@ -1,0 +1,84 @@
+.blog-navbar-brand {
+  width: 180px;
+}
+
+.blog-navbar {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: white;
+  -webkit-box-shadow: 2px 0px 18px 1px rgba(222, 222, 222, 1);
+  -moz-box-shadow: 2px 0px 18px 1px rgba(222, 222, 222, 1);
+  box-shadow: 2px 0px 4px 1px rgba(222, 222, 222, 1);
+}
+
+.blog-navbar-add-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  text-decoration: none;
+}
+
+.usertext{
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.userimg{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-content{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.costumInput{
+  border-radius: 25px!important;
+  overflow: hidden!important;
+}
+
+.navbar-scroll{
+  background-color: rgb(2, 255, 120);
+  -webkit-box-shadow: 2px 0px 18px 1px rgba(222, 222, 222, 1);
+  -moz-box-shadow: 2px 0px 18px 1px rgba(222, 222, 222, 1);
+  box-shadow: 2px 0px 4px 1px rgba(222, 222, 222, 1);
+}
+
+.custom-dropdown-menu {
+  border-radius: 25px!important;
+  position: absolute;
+  left: auto;
+  right: 0;
+  
+}
+.custom-dropdown-menu{
+  max-height: 500px;
+  overflow-y: auto;
+}
+#noti  .dropdown-toggle::after {
+  display: none
+}
+
+.dropdown-toggle{
+  border: none!important;
+}
+
+.alertnoti{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.disabled-button {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}

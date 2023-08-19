@@ -1,0 +1,82 @@
+/* styles.css */
+
+/* Stile generale per l'area contenitore */
+.new-blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per il titolo del form */
+.new-blog-container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Stile per ogni gruppo di form */
+.new-blog-container .form-group {
+  margin-bottom: 20px;
+}
+
+/* Stile per le etichette dei campi di input */
+.new-blog-container .blog-form-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Stile per gli input e i select */
+.new-blog-container .blog-form-file,
+.new-blog-container .blog-form-url,
+.new-blog-container input[type="text"],
+.new-blog-container textarea,
+.new-blog-container select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.new-blog-container .blog-form-file:hover,
+.new-blog-container .blog-form-url:hover,
+.new-blog-container input[type="text"]:hover,
+.new-blog-container textarea:hover,
+.new-blog-container select:hover {
+  border-color: #999;
+}
+
+/* Stile per i pulsanti "Reset" e "Invia" */
+.new-blog-container .d-flex.justify-content-end .btn {
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+.new-blog-container .btn-outline-dark {
+  color: #333;
+  border-color: #333;
+}
+
+.new-blog-container .btn-outline-dark:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.new-blog-container .btn-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.new-blog-container .btn-dark:hover {
+  background-color: #555;
+}
+
+

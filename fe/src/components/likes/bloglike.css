@@ -1,0 +1,13 @@
+.heartbtn{
+    cursor: pointer;
+    color: #ff4f4f;
+}
+
+.heartbtn:hover{
+    fill: #ff0000;
+}
+
+.heartbtnfill{
+    cursor: not-allowed;
+    color: #ff0000;
+}

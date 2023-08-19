@@ -1,0 +1,26 @@
+
+
+.search-result-link {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: -30px;
+    border-radius: 15px;
+    
+    padding: 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    width: 250px!important;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-results{
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffffff;
+    border-top: none;
+}

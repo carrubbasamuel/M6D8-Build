@@ -1,0 +1,40 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.sr-only{
+  display: none;
+}
+
+.pagination{
+    --bs-pagination-active-color: none;
+    --bs-pagination-active-bg: none;
+    --bs-pagination-active-border-color: none;
+}
+
+.page-link{
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+ #LottiHeader{
+    width: 400px!important;
+ }
+ .blog-navbar-brand{
+   width: 100px;
+ }
+ .login-root{
+  padding: 10px;
+ }
+ .changeprofile{
+    right: 60px;
+ }
+
+ .desc div.d-flex{
+  margin-top: 50px;
+  flex-direction: column;
+ }
+ .desc div.d-flex div.ms-5{
+  margin: 0 !important;
+ }
+}
