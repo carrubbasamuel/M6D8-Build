@@ -29,4 +29,4 @@ StriveBlog è una piattaforma di blogging che permette agli utenti registrati di
   - Socket.io: Libreria per la gestione della comunicazione in tempo reale.
 
 
-**Deployed site:**  
+**Deployed site:**  https://striveblog.netlify.app
