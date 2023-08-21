@@ -1,13 +1,17 @@
 import query from "query-string";
 import React, { useEffect, useRef } from "react";
 import { Button, Container, Form, Spinner } from "react-bootstrap";
+import ReactQuill from 'react-quill';
+import "react-quill/dist/quill.snow.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { fetchAuthors, fetchNewPost, fetchUpdatePosts } from "../../redux/reducers/PostSlice";
 import "./styles.css";
+import Quill from 'quill';
 
-
+const QuillClipboard = Quill.import('modules/clipboard');
+QuillClipboard.DEFAULTS.sanitize = [{ tag: 'span' }, { tag: 'div' }];
 
 const NewBlogPost = props => {
   const dispatch = useDispatch();
@@ -15,18 +19,18 @@ const NewBlogPost = props => {
   const { loading } = useSelector((state) => state.author);
   const allPosts = useSelector((state) => state.author.data);
   const [change, setChange] = React.useState(false);
+  const [quillContent, setQuillContent] = React.useState("");
 
   let coverUrl = useRef(null);
   let coverFile = useRef(null);
   const title = useRef(null);
   const category = useRef(null);
-  const content = useRef(null);
   const time = useRef(null);
 
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     const { update } = query.parse(window.location.search);
     if (update) {
       dispatch(fetchAuthors()).then(() => {
@@ -37,7 +41,7 @@ const NewBlogPost = props => {
         coverUrl.current.value = find.cover || "";
         title.current.value = find.title || "";
         category.current.value = find.category || "";
-        content.current.value = find.content || "";
+        setQuillContent(find.content || "");
         time.current.value = find.readTime.value || "";
       }
     }
@@ -59,7 +63,7 @@ const NewBlogPost = props => {
       title: title.current.value,
       readTime: time.current.value,
       category: category.current.value,
-      content: content.current.value,
+      content: quillContent,
     };
 
     if (update) {
@@ -97,6 +101,10 @@ const NewBlogPost = props => {
       coverFile.current.value = "";
     }
   };
+
+  const handleReset = () => {
+    setQuillContent("");
+  }
 
 
   return (
@@ -143,12 +151,19 @@ const NewBlogPost = props => {
             </div>
           </Form.Group>
 
+
           <Form.Group controlId="blog-content" className="mt-3">
             <Form.Label>Contenuto Blog</Form.Label>
-            <Form.Control size="lg" as="textarea" rows={10} ref={content} />
+            <ReactQuill
+              value={quillContent}
+              onChange={setQuillContent}
+              theme="snow" // Usa il tema snow
+              
+            />
           </Form.Group>
+
           <Form.Group className="d-flex mt-3 justify-content-end">
-            <Button type="reset" size="lg" variant="outline-dark">
+            <Button type="reset" size="lg" variant="outline-dark" onClick={handleReset}>
               Reset
             </Button>
             <Button
