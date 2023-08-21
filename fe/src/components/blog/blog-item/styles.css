@@ -64,3 +64,27 @@
 .mark:hover svg{
   fill: rgb(0, 0, 0)!important;
 }
+
+.crud-icon{
+  display: flex;
+  
+  position: absolute;
+  top: -25px;
+  left: 10px;
+  font-size: 20px;
+  color: rgba(60, 53, 53, 0.325);
+}
+
+.crud-icon .crud-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { setEmitSocketConnection } from "./redux/reducers/LoginSlice";
+import { fetchAuthors } from "./redux/reducers/PostSlice";
 
 export default function ProtectedRoute({ element }) {
   const { userLogged } = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setEmitSocketConnection(userLogged && userLogged.user._id));
+    dispatch(setEmitSocketConnection(userLogged && userLogged.user._id))
   }, [dispatch, userLogged]);
 
   if (!userLogged || userLogged.statusCode !== 200) {

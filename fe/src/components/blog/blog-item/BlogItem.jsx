@@ -27,26 +27,24 @@ const BlogItem = ({ posts }) => {
     dispatch(fetchGetReviews());
   };
 
-  
+
 
   return (
-    <Card className="blog-card shadow" >
-      <Link to={`/new?update=${_id}`} className="update-link">
-      <RxUpdate />
-    </Link>
+    <Card className="blog-card shadow position-relative" >
+
       {/* Save button */}
-      <BlogSaveButton posts={posts}/>
+      <BlogSaveButton posts={posts} />
       <Card.Img variant="top" src={cover} className="blog-cover" />
       <Card.Body as={Link} to={`/blog/${_id}`}>
         <Card.Title>{title}</Card.Title>
       </Card.Body>
       <Card.Footer className="d-flex  justify-content-between align-items-center">
         <BlogAuthor {...author} />
-        <div className="d-flex align-items-center justify-content-center fs-4">
+        <di className="d-flex align-items-center justify-content-center fs-4">
 
           {/* Like button */}
           <BlogLikeButton posts={posts} />
-          
+
           {/* Comment button */}
           <div className='d-flex align-items-center justify-content-center fs-4 ms-2'>
             <AiOutlineComment onClick={handleShow} style={{ cursor: 'pointer' }} />
@@ -54,17 +52,19 @@ const BlogItem = ({ posts }) => {
 
           {/* Delate button */}
           {location.pathname === "/dashboard" && posts?.isMine === true &&
-          <><div className="d-flex align-items-center">
-              <TiDocumentDelete onClick={() => dispatch(fetchDeletePost(_id)).then(() => dispatch(fetchMyPosts()))} style={{ cursor: 'pointer' }} />
-              
-            </div>
-             </>
-            
+              <div className="crud-icon">
+                <div className="crud-link" onClick={() => dispatch(fetchDeletePost(_id)).then(() => dispatch(fetchMyPosts()))} style={{ cursor: 'pointer' }} >
+                  <TiDocumentDelete />
+                </div>
+                <Link to={`/new?update=${_id}`} className="crud-link">
+                  <RxUpdate />
+                </Link>
+              </div>
           }
-        </div>
+        </di>
 
       </Card.Footer>
-    </Card>
+    </Card >
 
   );
 };

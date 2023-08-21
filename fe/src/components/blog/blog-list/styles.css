@@ -3,17 +3,22 @@
 }
 
 .blog-card:hover{
-    animation: posthover 0.5s ease-in-out;
+    animation: posthover 0.3s ease-in-out;
 }
 
-@keyframes posthover{
-    0%{
-        transform: scale3d(1, 1, 1);
+@keyframes posthover {
+    0% {
+        transform: translate3d(0, 0, 0);
     }
-    50%{
-        transform: scale3d(1.02, 1.02, 1.02);
+    50% {
+        transform: translate3d(0, -5px, 0);
     }
-    100%{
-        transform: scale3d(1, 1, 1);
+    100% {
+        transform: translate3d(0, 0, 0);
     }
 }
+    
+
+
+
+

@@ -235,6 +235,39 @@ export const fetchSearchPost = createAsyncThunk(
     }
 )
 
+//Update Post
+export const fetchUpdatePosts = createAsyncThunk(
+    'authors/fetchUpdatePost',
+    async (datas, { getState }) => {
+        const { id, blogItem } = datas;
+        const user = getState().login.userLogged;
+
+        console.log(blogItem);
+        const formData = new FormData();
+        formData.append('title', blogItem.title);
+        formData.append('category', blogItem.category);
+        formData.append('content', blogItem.content);
+        formData.append('readTime', blogItem.readTime);
+        formData.append('coverImg', blogItem.cover);
+
+
+        try {
+            const response = await axios.patch(`${process.env.REACT_APP_API_URL}/update/${id}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${user.token}`,
+                }
+            });
+            const { data } = response;
+            console.log(data);
+            return data;
+        } catch (error) {
+            console.log(error);
+            return error;
+        }
+    }
+)
+
 
 
 
@@ -334,6 +367,16 @@ const PostSlice = createSlice({
             .addCase(fetchSearchPost.rejected, (state, action) => {
                 state.loading = false;
                 state.search = [];
+            })
+            .addCase(fetchUpdatePosts.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(fetchUpdatePosts.fulfilled, (state, action) => {
+                state.loading = false;
+            })
+            .addCase(fetchUpdatePosts.rejected, (state, action) => {
+                console.log(action);
+                state.loading = false;
             })
     }
 })
